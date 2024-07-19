@@ -28,13 +28,14 @@ export async function POST(request: Request): Promise<NextResponse> {
         // Get notified of client upload completion
         // ⚠️ This will not work on `localhost` websites,
         // Use ngrok or similar to get the full upload flow
-
+        console.log("hello from onUploadCompleted");
         console.log("blob upload completed", blob, tokenPayload);
 
         try {
           // Run any logic after the file upload completed
           // const { userId } = JSON.parse(tokenPayload);
           // await db.update({ avatar: blob.url, userId });
+          console.log("hello from onUploadCompleted try block");
         } catch (error) {
           throw new Error("Could not update user");
         }
